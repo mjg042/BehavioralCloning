@@ -24,7 +24,6 @@ REFERENCES
 
 """
 
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -54,7 +53,7 @@ def GetData(args):
 
 def BuildModel(args):
     """
-    based on naokishibuya
+    based on naokishibuya with some max pooling 
     """
     model = Sequential()
     model.add(Lambda(lambda x: x/127.5-1.0, input_shape=INPUT_SHAPE))
@@ -105,28 +104,26 @@ def s2b(s):
 
 def main():
     """
-    Load train/validation data set and train the model
+    set default arguments
     """
-    parser = argparse.ArgumentParser(description='Behavioral Cloning Training Program')
-    #parser.add_argument('-d', help='data directory',        dest='data Dir',           type=str,   default='data\\Sim\\Lap2')
-    parser.add_argument('-d', help='data directory',        dest='dataDir',           type=str,   default='data\\Sim\\Combo')
-    #parser.add_argument('-d', help='data directory',        dest='dataDir',           type=str,   default='data\\Sim\\Jungle2')
-    parser.add_argument('-t', help='test size fraction',    dest='testSize',          type=float, default=0.2)
-    parser.add_argument('-k', help='drop out probability',  dest='keepProb',          type=float, default=0.5)
-    parser.add_argument('-n', help='number of epochs',      dest='nbEpoch',           type=int,   default=4)
-    parser.add_argument('-s', help='samples per epoch',     dest='samplesPerEpoch',   type=int,   default=1000)
-    parser.add_argument('-b', help='batch size',            dest='batchSize',         type=int,   default=100)
-    parser.add_argument('-o', help='save best models',      dest='saveBestModel',     type=s2b,   default='true')
-    parser.add_argument('-l', help='learning rate',         dest='learningRate',      type=float, default=1.0e-4)
+    parser = argparse.ArgumentParser(description='Behavioral Cloning')
+    parser.add_argument('-d',help='data directory',dest='dataDir',        type=str,  default='data\\Sim\\Combo')
+    parser.add_argument('-t',help='test size frac',dest='testSize',       type=float,default=0.2)
+    parser.add_argument('-k',help='drop out prob', dest='keepProb',       type=float,default=0.5)
+    parser.add_argument('-n',help='no of epochs',  dest='nbEpoch',        type=int,  default=4)
+    parser.add_argument('-s',help='samples/epoch', dest='samplesPerEpoch',type=int,  default=1000)
+    parser.add_argument('-b',help='batch size',    dest='batchSize',      type=int,  default=100)
+    parser.add_argument('-o',help='save best mod', dest='saveBestModel',  type=s2b,  default='true')
+    parser.add_argument('-l',help='learning rate', dest='learningRate',   type=float,default=1.0e-4)
     args = parser.parse_args()
 
-    print('-' * 30)
     print('Parameters')
-    print('-' * 30)
     for key, value in vars(args).items():
         print('{:<20} := {}'.format(key, value))
-    print('-' * 30)
 
+    """
+    get the data, build & train the model
+    """
     data = GetData(args)
     model = BuildModel(args)
     TrainModel(model, args, *data)

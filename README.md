@@ -14,13 +14,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/easy.png      "Model Visualization"
-[image2]: ./examples/grayscale.png "Grayscaling"
-[image3]: ./examples/hard.png      "Difficult Track Image"
-[image4]: ./examples/left.png      "Left Image"
-[image5]: ./examples/center.png    "Center Image"
-[image6]: ./examples/right.png     "Right Image"
-[image7]: ./examples/hardFlip.png  "Flipped Image"
+[image1]: ./examples/easy.jpg      "Model Visualization"
+[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image3]: ./examples/hard.jpg      "Difficult Track Image"
+[image4]: ./examples/left.jpg      "Left Image"
+[image5]: ./examples/center.jpg    "Center Image"
+[image6]: ./examples/right.jpg     "Right Image"
+[image7]: ./examples/hardFlip.jpg  "Flipped Image"
 
 
 
@@ -101,6 +101,7 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+
 
 ![alt text][image1]
 

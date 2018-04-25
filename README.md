@@ -40,8 +40,10 @@ The goals / steps of this project are the following:
 
 My project includes the following files:
 * model.py containing the script to create and train the model
+* utils.py containing the helper functions image augmentation and model training
 * drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
+* model.h5 containing a trained convolution neural network
+* examples folder containing images used in this README file
 * README.md summarizing the results
 
 #### 2. Submission includes functional code
@@ -52,27 +54,27 @@ python drive.py model.h5
 
 #### 3. Submission code is usable and readable
 
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+The model.py and utils.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
 ### Model Architecture and Training Strategy
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 24 and 64 (model.py lines 58-73) 
+My model consists of a convolution neural network with mulitple filter sizes and depths between 24 and 64 (model.py lines 40-55) 
 
-The model includes several ELU layers to introduce nonlinearity, and the data is normalized in the model using a Keras lambda layer (code line 59). 
+The model includes several ELU layers to introduce nonlinearity, and the data is normalized in the model using a Keras lambda layer (code line 41). 
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 67). 
+The model contains a dropout layer in order to reduce overfitting (model.py lines 49). 
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting. I combined the images from the easy track and the difficult track into one directory. 
+The model was trained and validated on different data sets to ensure that the model was not overfitting. I combined the images from the easy track and the difficult track into one directory. I also trained for as few epochs as possible to avoid overfitting. Batch sizes (100) and sample sizes (1000) were also kept fairly low to avoid overfitting.
 
-The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track. The simulator runs on the easy track were pretty good. The simulator run on the difficult track eventually went off the track, but was much better than my earlier runs! I think if I added more simulator runs from the difficult track to the training data my autonomous runs on the difficult track would have been better.
+The model was tested by running it through the simulator to be sure that the vehicle could stay on the track. The simulator runs on the easy track were pretty good. The simulator run on the difficult track eventually went off the track, but was much better than my earlier runs! I think if I added more simulator runs from the difficult track to the training data my autonomous runs on the difficult track would have been better.
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 87).
+The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 69).
 
 #### 4. Appropriate training data
 
@@ -97,31 +99,33 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
-
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
-
+The final model architecture (model.py lines 40-55) consisted of a convolution neural network with the following layers and layer sizes:
 
 ![alt text][image0]
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+To capture good driving behavior, I first recorded two laps on the easy track using center lane driving. Here is an example image of center lane driving:
 
 ![alt text][image1]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+Here are the left, center and right camera views from the easy track:
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+|Left Camera|Center Camera|Right Camera|
+|:----------:|:----------:|:----------:|
+|[![alt text][image4]]|[![alt text][image5]]|[![alt text][image6]]
 
-Then I repeated this process on track two in order to get more data points.
+
+I collected similar sets of images from simulations on the difficult track. 
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-![alt text][image6]
-![alt text][image7]
+
+|Original|Flipped|
+|:----------:|:----------:|
+|[![alt text][image3]]|[![alt text][image7]]
+
+
 
 Etc ....
 

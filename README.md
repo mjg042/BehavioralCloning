@@ -113,7 +113,7 @@ Here are the left, center and right camera views from the easy track:
 
 |Left Camera|Center Camera|Right Camera|
 |:----------:|:----------:|:----------:|
-|[![alt text][image4]]|[![alt text][image5]]|[![alt text][image6]]
+|![alt text][image4]|![alt text][image5]|![alt text][image6]
 
 
 I collected similar sets of images from simulations on the difficult track. 
@@ -123,7 +123,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 |Original|Flipped|
 |:----------:|:----------:|
-|[![alt text][image3]]|[![alt text][image7]]
+|![alt text][image3]|![alt text][image7]
 
 
 

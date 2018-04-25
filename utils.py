@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 16 05:24:59 2018
-
-@author: mgriffi3
-"""
-
-"""
 REFERENCES
     https://github.com/naokishibuya/car-behavioral-cloning
 """

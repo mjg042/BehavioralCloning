@@ -118,7 +118,9 @@ Here are the left, center and right camera views from the easy track:
 
 I collected similar sets of images from simulations on the difficult track. 
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data sat, I also randomly flipped and translated images. I added brightness to random images as well. Image augmentation is used to improve model performance by having the model train on the kind of data that it might see in new environments.
+
+Here is an example of a flipped image.
 
 
 |Original|Flipped|
@@ -126,12 +128,8 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 |![alt text][image3]|![alt text][image7]
 
 
+The total number of un-augmented images used was 18,421. These images were not uploaded to GitHub.
 
-Etc ....
+During training, images were randomly shuffled. 80% of the shuffled images were used for training and 20% for testing.
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+The ideal number of epochs was 2 as evidenced by the ability of the autonomous vehicle to stay on the road.

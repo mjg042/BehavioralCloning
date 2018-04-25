@@ -26,7 +26,7 @@ The goals / steps of this project are the following:
 
 |Easy Track|Difficult Track|
 |:--------:|:------------:|
-|[![Easy Track](images/easy.jpg)](https://youtu.be/hTPADovdyfA)|[![Difficult Track](images/hard.png)]
+|[![Easy Track](examples/easy.jpg)]|[![Difficult Track](examples/hard.png)]
 
 
 ## Rubric Points

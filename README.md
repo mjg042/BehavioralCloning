@@ -26,7 +26,7 @@ The goals / steps of this project are the following:
 
 |Easy Track|Difficult Track|
 |:--------:|:------------:|
-|[![Easy Track](examples/easy.jpg)]|[![Difficult Track](examples/hard.png)]
+|[![Easy Track](examples/easy.jpg)]|[![Difficult Track](examples/hard.jpg)]
 
 
 ## Rubric Points
@@ -73,9 +73,10 @@ The model used an adam optimizer, so the learning rate was not tuned manually (m
 
 #### 4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
+Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving from the easy track and the difficult track. The critical factor was modeling good behavior, i.e. keeping my car in the middle of the road as much as possible. I don't spend a lot of time with video games, so this was challenging for me. After some practice I got some decent (albeit slow) runs where my cars stayed in the middle of the road. 
 
-For details about how I created the training data, see the next section. 
+In brief, training the model with erratic driving resulted in erratic autonomous driving. Training the model with center of the road driving improved results dramatically.
+
 
 ### Model Architecture and Training Strategy
 

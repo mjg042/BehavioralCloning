@@ -1,23 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 16 05:21:50 2018
-
-@author: mgriffi3
-"""
-
-"""
-import pip
-packages = ['utils']
-pip.main(['install'] + packages + ['--upgrade'])
-"""
-
-"""
-wd = "C:\\cygwin64\\home\\mgriffi3\\projects\\ImageAnalysis\\udacity\\transferLearning\\CarND-Behavioral-Cloning-P3"
-import os
-os.chdir(wd)
-"""
-
-"""
 REFERENCES
     
     https://github.com/naokishibuya/car-behavioral-cloning
